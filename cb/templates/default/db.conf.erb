@@ -1,0 +1,4 @@
+db=<%= @ip %>
+echo $db > /tmp/ip.txt
+sed -i -e "s/localhost/${db}/g" /home/ubuntu/spring/src/main/resources/environment/db.properties
+
