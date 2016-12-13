@@ -6,8 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-dbip1 = data_bag_item('db_ip','db_instance_ip')
-$db = dbip1['ip']
+#dbip1 = data_bag_item('db_ip','db_instance_ip')
+#$db = dbip1['ip']
 
 execute "update_apt_repo" do
 	command "apt-get update"
@@ -34,10 +34,10 @@ end
 
 #end
 
-execute "change_the_ip_of_db" do
-	command "echo #$db > /tmp/ip.txt ; sed -i -e \"s/localhost/#$db/g\" /home/ubuntu/spring/src/main/resources/environment/db.properties"
+#execute "change_the_ip_of_db" do
+#	command "echo #$db > /tmp/ip.txt ; sed -i -e \"s/localhost/#$db/g\" /home/ubuntu/spring/src/main/resources/environment/db.properties"
 #	command "/bin/bash /tmp/db.sh"
-	action :run
+#	action :run
 end
 
 execute "compile maven project" do
